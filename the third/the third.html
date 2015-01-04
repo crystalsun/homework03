@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>新闻中心首页</title>
+</head>
+   <link rel="stylesheet" type="text/css" href="style.css">
+    
+<body>
+<div class="fPic"> 
+			<ul class="label01 cGray" id="controlSlide">
+				<li class=""><a class="labelli">娱乐</a></li>
+        <li class=""><a class="labelli">资讯</a></li>
+				<li class=""><a class="labelli">体育</a></li>
+				<li class=""><a class="labelli">汽车</a></li>
+				<li class=""><a class="labelli">时尚</a></li>
+				<li class=""><a class="labelli">军事</a></li>
+				<li class=""><a class="labelli">纪实</a></li>
+				<li class=""><a class="labelli">房产</a></li>
+			</ul>
+         
+
+        <ul class="tablistDiv" id="tabSlide">
+              
+            <li class="bigPic" style="display: block;">
+                <a><img id="image" class="imgs" src="img/yl.jpg"></a>
+                <div class="text1"><h3 class="cWhite3"><a class="a1"id="ad" href="">明星们的温暖“寒假”</a></h3></div>
+            </li>
+    
+            <li class="bigPic"  style="display: block;">
+                <a><img id="image" class="imgs" src="img/ss.jpg"></a>
+                <div class="text1"><h3 class="cWhite3"><a class="a1" id="ad" href="">美杂志评2014关于手的16张新闻图片</a></h3></div>
+            </li>
+
+            <li class="bigPic" style="display:none;">
+                <a><img id="image" class="imgs" src="img/ty.jpg"></a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="" >中国篮球超奇葩一幕</a></h3></div>
+            </li>  
+
+            <li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/zx.jpg"></a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="">超高回头率</a></h3></div>
+            </li>
+
+
+            <li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/win1.jpg "></a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="">零下14度的美丽 </a></h3></div>
+            </li>
+             
+
+            <li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/j.jpg"></a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="" >美超级航母1美分出售 </a></h3></div>
+                </li>
+
+            <li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/js.jpg"></a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="">神秘的圆形</a></h3></div>
+            </li>
+
+            <li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/fc.jpg"> </a>
+                <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="">人类历史上最差建筑:中国一建筑上榜</a></h3></div>
+            </li>
+
+            <!--<li class="bigPic" style="display: none;">
+                <a><img id="image" class="imgs" src="img/auo.jpg"></a>
+					      <div class="text1"><h3 class="cWhite"><a class="a1" id="ad" href="">以热辣舞蹈著称</a></h3></div>
+            </li>-->
+                  
+      </ul>
+
+</div>
+         <div id="arrwraper">
+              <div id="prevSlide" style="display:inline-block;" >
+                <a ><img src="img/v1.gif" width="30" height="36" ></a>
+              </div>
+              <div id="nextSlide" style="display:inline-block;">
+                <a><img src="img/v2.gif" width="30" height="36"></a>
+              </div>  
+          </div>
+          
+<script type="text/javascript" >
+
+function byId(id){
+  return document.getElementById(id);
+}
+
+var index;//点击显示
+var navs=byId("controlSlide").getElementsByTagName("li");
+function display(){
+for (var i=0;i<navs.length;i++)
+{
+  var nav_item=navs[i];
+  nav_item.onmouseover=function(){
+    for(var m=0;m<navs.length;m++)
+    {
+      if(this.innerText==navs[m].innerText)
+      {
+        index=m;
+        break;
+      }
+    }
+    var images=byId("tabSlide").getElementsByTagName("li");
+    for(var j=0;j<navs.length;j++)
+    {
+      images[j].style.display="none";
+
+    }
+    images[index].style.display="block";
+  };
+
+}
+}
+display();
+
+
+
+var myPic=new Array("img/yl.jpg","img/ss.jpg","img/ty.jpg","img/zx.jpg","img/win1.jpg","img/j.jpg","img/js.jpg","img/fc.jpg");//左右切换
+var mytext=new Array("明星们的温暖“寒假”","美杂志评2014关于手的16张新闻图片","中国篮球超奇葩一幕","超高回头率","零下14度的美丽","美超级航母1美分出售","神秘的圆形","人类历史上最差建筑:中国一建筑上榜");
+var thisPic=0;
+  document.getElementById("prevSlide").onclick=function(){
+    processPrevious();
+    clearInterval(move);
+  } 
+  document.getElementById("nextSlide").onclick=function(){
+    processNext();
+    clearInterval(move);
+  } 
+
+function processPrevious(){
+  if (thisPic==0){
+    thisPic=myPic.length;
+  }
+  thisPic--;
+  document.getElementById("image").src=myPic[thisPic];
+  document.getElementById("ad").firstChild.nodeValue=mytext[thisPic];
+  return false;
+}
+function processNext(){
+  thisPic++;
+  if (thisPic==myPic.length){
+    thisPic=0;
+  }
+  document.getElementById("image").src=myPic[thisPic];
+  document.getElementById("ad").firstChild.nodeValue=mytext[thisPic];
+  return false;
+}
+
+
+
+var move=setInterval(test,3000); //定时器
+var array=new Array(); 
+var indx=0; 
+var array= new Array("img/yl.jpg","img/ss.jpg","img/ty.jpg","img/yl.jpg","img/zx.jpg","img/win1.jpg","img/j.jpg","img/js.jpg","img/fc.jpg","img/auo.jpg"); 
+function test() 
+{ var mimg=document.getElementById("image"); 
+if(indx==array.length-1) 
+{ indx=0; }else{ indx++; } 
+mimg.src=array[indx]; 
+} 
+
+window.onload=byId;
+</script>
+</body>

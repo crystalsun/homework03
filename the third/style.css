@@ -1,0 +1,96 @@
+.fPic {
+float: left;
+width: 360px;
+padding: 9px 0 13px;
+overflow: hidden;
+}
+.label01 {
+float: left;
+width: 360px;
+height: 29px;
+background: url(img/lab_03.gif) no-repeat left -91px;
+}
+.cGray{
+color: #666;
+}
+li {
+float: left;
+width: 40px;
+height: 24px;
+line-height: 24px;
+background: url(img/lab_03.gif) no-repeat right -47px;
+text-align: center;
+padding-bottom: 3px;
+list-style-type:none;
+}
+.labelli{
+text-decoration:none;
+color:grey;
+font-size: 0.9em;
+}
+.tablistDiv {
+float: left;
+width: 360px;
+height: 212px;
+overflow: hidden;
+}
+.tabDiv {
+float: left;
+width: 360px;
+height: 212px;
+overflow: hidden;
+display: none;
+}
+.bigPic {
+float: left;
+width: 360px;
+height: 212px;
+position: relative;
+}
+.imgs{
+	width: 360px;
+	height: 212px;
+}
+.text1 {
+width: 360px;
+height: 26px;
+background:white;
+text-align: center;
+line-height: 3px;
+border: 1px solid #4C4C4C;
+position: absolute;
+top: 186px;
+left: 0;
+opacity: 0.6;
+}
+h3 {
+font-size: 0.9em;
+font-weight: bold;
+}
+.cWhite3 {
+color: #fff;
+top: 10px;
+}
+
+.a1{
+	text-decoration:none;
+	color: black;
+}
+#prevSlide, #nextSlide {
+width: 40px;
+height: 46px;
+
+z-index: 10;
+cursor: pointer;
+}
+#nextSlide{
+	float:right;
+
+}
+#arrwraper{
+	width: 350px;
+	height: 50px;
+	position: absolute;
+top: 165px;
+left: 39px;
+}
